@@ -55,4 +55,14 @@ public class MaestroElemental {
 	public void calmarCriatura(String nombreCriatura) {
 		
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public Integer getNivelMaestria() {
+		return nivelMaestria;
+	}
+	
+	
 }

@@ -16,7 +16,7 @@ public abstract class CriaturaElemental {
 		if (nivelDeEnergia != null && nivelDeEnergia >= 0 && nivelDeEnergia <= 200 ) {
 			this.nivelDeEnergia = nivelDeEnergia;
 		} else {
-			this.nivelDeEnergia = 50;
+			this.nivelDeEnergia = 10;
 		}
 		
 		if (afinidadElemental != null && (afinidadElemental.equalsIgnoreCase("agua")
@@ -66,6 +66,20 @@ public abstract class CriaturaElemental {
     protected void aumentarEnergia(int cantidad) {
         this.nivelDeEnergia += cantidad;
     }
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setComportamientoEmocional(String comportamientoEmocional) {
+		this.comportamientoEmocional = comportamientoEmocional;
+	}
+
+
+	
+    
 }
 
 
