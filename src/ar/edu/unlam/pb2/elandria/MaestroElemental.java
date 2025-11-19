@@ -1,13 +1,17 @@
 package ar.edu.unlam.pb2.elandria;
 
-public class MestroElemental {
+import java.util.Map;
+
+import ar.edu.unlam.pb2.excepciones.ExcepcionMaestriaInsuficiente;
+
+public class MaestroElemental {
 	
 	private String nombre;
 	private Integer nivelMaestria;
 	private String afinidadElemental;
 	private Map<String,CriaturaElemental> criaturas = new HashMap;
 	
-	public MestroElemental(String nombre, Integer nivelMestria, String afinidadElemental) {
+	public MaestroElemental(String nombre, Integer nivelMestria, String afinidadElemental) {
 		this.nombre = nombre;
 		if(nivelMestria < 0) {
 			nivelMestria = 0;
@@ -28,10 +32,10 @@ public class MestroElemental {
 	    criaturas.put(criatura.getNombre(), criatura);
 	}
 	
-	public void entrenarCriatura(String nombreCriatura) throws MaestriaInsuficienteException {
+	public void entrenarCriatura(String nombreCriatura) throws ExcepcionMaestriaInsuficiente {
 
 		CriaturaElemental criatura = criaturas.get(nombreCriatura);
-		Integer energia = criatura.getNivelDeEnergia();
+		Integer energia = criatura.getNivelEnergia();
 
 	    if (criatura == null) {
 	        System.out.println("La criatura no existe.");
@@ -42,7 +46,7 @@ public class MestroElemental {
 		if ((nivelMaestria <= 25 && energia >= 100) ||
 		    (nivelMaestria > 25 && nivelMaestria <= 50 && energia > 200)) {
 		    
-		    throw new MaestriaInsuficienteException("No tenés suficiente maestría para entrenarla.");
+		    throw new ExcepcionMaestriaInsuficiente("No tenï¿½s suficiente maestrï¿½a para entrenarla.");
 		}
 		
 		criatura.entrenar();

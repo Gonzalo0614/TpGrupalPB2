@@ -1,4 +1,6 @@
-package ar.edu.unlam.pb2.criaturas;
+package ar.edu.unlam.pb2.elandria;
+
+import ar.edu.unlam.pb2.excepciones.ExcepcionMaestriaInsuficiente;
 
 public abstract class CriaturaElemental {
 
@@ -30,5 +32,40 @@ public abstract class CriaturaElemental {
 			this.comportamientoEmocional = "tranquilo";
 		}
 	}
+	
+	
+   public abstract void entrenar(MaestroElemental maestro) throws ExcepcionMaestriaInsuficiente; 
+    
+	public abstract void pacificar();
+	
+	
+	public String getComportamientoEmocional() {
+        return comportamientoEmocional;
+    }
 
+    
+    public void volverseInestable() {
+        this.comportamientoEmocional = "inestable";
+    }
+    
+   
+    public Integer getNivelEnergia() {
+        return nivelDeEnergia;
+    }
+
+    public void setNivelEnergia(Integer nuevoNivel) {
+        
+        this.nivelDeEnergia = nuevoNivel;
+    }
+    
+    
+    public String getAfinidadElemental() {
+        return afinidadElemental;
+    }
+    
+    protected void aumentarEnergia(int cantidad) {
+        this.nivelDeEnergia += cantidad;
+    }
 }
+
+
