@@ -70,9 +70,6 @@ public class MaestroElemental {
 		TransformacionElemental criaturaTransformada = transformacion.aplicar(criatura);
 		
 		criaturas.put(nombreCriatura, criaturaTransformada);
-
-	    System.out.println(nombreCriatura + " ha sido transformada en " 
-	                       + criaturaTransformada.getClass().getSimpleName());
 	}
 
 	public String getNombre() {
