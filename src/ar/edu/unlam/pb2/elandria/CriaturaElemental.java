@@ -26,7 +26,7 @@ public abstract class CriaturaElemental {
 			this.afinidadElemental = "fuego";
 		}
 		if (comportamientoEmocional!= null && (comportamientoEmocional.equalsIgnoreCase("tranquila")
-				|| afinidadElemental.equalsIgnoreCase("inestable"))) {
+				|| comportamientoEmocional.equalsIgnoreCase("inestable"))) {
 			this.comportamientoEmocional = comportamientoEmocional.toLowerCase();
 		}else {
 			this.comportamientoEmocional = "tranquilo";
@@ -34,7 +34,7 @@ public abstract class CriaturaElemental {
 	}
 	
 	
-   public abstract void entrenar(MaestroElemental maestro) throws ExcepcionMaestriaInsuficiente; 
+   public abstract void entrenar() throws ExcepcionMaestriaInsuficiente; 
     
 	public abstract void pacificar();
 	
@@ -63,7 +63,12 @@ public abstract class CriaturaElemental {
         return afinidadElemental;
     }
     
-    protected void aumentarEnergia(int cantidad) {
+    public void setAfinidadElemental(String afinidadElemental) {
+		this.afinidadElemental = afinidadElemental;
+	}
+
+
+	protected void aumentarEnergia(int cantidad) {
         this.nivelDeEnergia += cantidad;
     }
 
@@ -76,10 +81,6 @@ public abstract class CriaturaElemental {
 	public void setComportamientoEmocional(String comportamientoEmocional) {
 		this.comportamientoEmocional = comportamientoEmocional;
 	}
-
-
-	protected abstract void entrenar();
-
 
 	
     

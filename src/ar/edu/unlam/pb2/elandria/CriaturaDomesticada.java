@@ -11,11 +11,7 @@ public class CriaturaDomesticada extends CriaturaElemental {
 	}
 
 	@Override
-	public void entrenar(MaestroElemental maestro) throws ExcepcionMaestriaInsuficiente {
-		if (maestro.getNivelMaestria() < 5) {
-			throw new ExcepcionMaestriaInsuficiente("El maestro " + maestro.getNombre()
-					+ " no tiene la maestría suficiente para entrenar esta criatura domesticada.");
-		}
+	public void entrenar() throws ExcepcionMaestriaInsuficiente {
 
 		int aumentoEstable = 10;
 
@@ -34,10 +30,5 @@ public class CriaturaDomesticada extends CriaturaElemental {
 		this.setComportamientoEmocional("tranquila");
 	}
 
-	@Override
-	protected void entrenar() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

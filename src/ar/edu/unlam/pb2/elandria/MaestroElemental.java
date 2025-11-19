@@ -43,8 +43,7 @@ public class MaestroElemental {
 	    
 		Integer energia = criatura.getNivelEnergia();
 
-		if ((nivelMaestria <= 25 && energia >= 100) ||
-		    (nivelMaestria > 25 && nivelMaestria <= 50 && energia > 200)) {
+		if (nivelMaestria <= 25 && energia >= 100) {
 		    
 		    throw new ExcepcionMaestriaInsuficiente("No tenés suficiente maestría para entrenarla.");
 
@@ -56,10 +55,24 @@ public class MaestroElemental {
 	public void calmarCriatura(String nombreCriatura) {
 		CriaturaElemental criatura = criaturas.get(nombreCriatura);
 		
-		if(criatura.getComportamientoEmocional().toLowerCase().equals("tranquilo")) {
-			criatura.setComportamientoEmocional("Tranquilo");
+		if(criatura.getComportamientoEmocional().toLowerCase().equals("inestable")) {
+			criatura.pacificar();;
 		}
 
+	}
+	
+	public void transformarCriatura(TransformacionElemental transformacion, String nombreCriatura) {
+		CriaturaElemental criatura = criaturas.get(nombreCriatura);
+		
+		if(criatura == null) {
+			return;
+		}
+		TransformacionElemental criaturaTransformada = transformacion.aplicar(criatura);
+		
+		criaturas.put(nombreCriatura, criaturaTransformada);
+
+	    System.out.println(nombreCriatura + " ha sido transformada en " 
+	                       + criaturaTransformada.getClass().getSimpleName());
 	}
 
 	public String getNombre() {

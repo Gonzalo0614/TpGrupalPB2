@@ -12,11 +12,7 @@ public class CriaturaSalvaje extends CriaturaElemental {
 	}
 
 	@Override
-	public void entrenar(MaestroElemental maestro) throws ExcepcionMaestriaInsuficiente {
-		if (maestro.getNivelMaestria() < 20) {
-			throw new ExcepcionMaestriaInsuficiente("El maestro " + maestro.getNombre()
-					+ " no tiene la maestría suficiente para entrenar a una criatura salvaje.");
-		}
+	public void entrenar() throws ExcepcionMaestriaInsuficiente {
 
 		int aumentoAleatorio = (int) (Math.random() * 50) + 1;
 
@@ -24,22 +20,17 @@ public class CriaturaSalvaje extends CriaturaElemental {
 
 		if (nuevaEnergia > 200) {
 
-			throw new ExcepcionEnergiaMaximaSuperada(
-					"¡La criatura se descontroló! Superó el límite de 200 de energía.");
+			throw new ExcepcionEnergiaMaximaSuperada("�La criatura se descontrola! Supera el limite de 200 de energia.");
 		}
 
 		this.setNivelEnergia(nuevaEnergia);
 	}
 
 	
-@Override
-public void pacificar() {
-    this.setComportamientoEmocional("tranquila");
-}
+		@Override
+		public void pacificar() {
+		    this.setComportamientoEmocional("tranquila");
+		}
 
-@Override
-protected void entrenar() {
-	// TODO Auto-generated method stub
-	
-}
+
 }

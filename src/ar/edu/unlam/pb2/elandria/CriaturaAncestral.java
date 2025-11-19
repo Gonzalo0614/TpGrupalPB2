@@ -12,11 +12,8 @@ public class CriaturaAncestral extends CriaturaElemental {
 	}
 
 	@Override
-	public void entrenar(MaestroElemental maestro) throws ExcepcionMaestriaInsuficiente {
-		if (maestro.getNivelMaestria() < 40) { 
-            throw new ExcepcionMaestriaInsuficiente("El maestro no tiene la maestría suficiente para entrenar esta criatura ancestral.");
-        }
-        
+	public void entrenar() throws ExcepcionMaestriaInsuficiente {
+
         int nuevaEnergia = this.getNivelEnergia() + 10; 
         
         
@@ -29,11 +26,6 @@ public class CriaturaAncestral extends CriaturaElemental {
 
 	}
 
-	@Override
-	protected void entrenar() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
     
