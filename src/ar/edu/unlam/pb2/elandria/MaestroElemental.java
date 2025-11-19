@@ -1,15 +1,15 @@
 package ar.edu.unlam.pb2.elandria;
 
-import java.util.Map;
-
-import ar.edu.unlam.pb2.excepciones.ExcepcionMaestriaInsuficiente;
+import ar.edu.unlam.pb2.*;
+import java.util.*;
 
 public class MaestroElemental {
 	
 	private String nombre;
 	private Integer nivelMaestria;
 	private String afinidadElemental;
-	private Map<String,CriaturaElemental> criaturas = new HashMap;
+	private Map<String,CriaturaElemental> criaturas = new HashMap<>();
+
 	
 	public MaestroElemental(String nombre, Integer nivelMestria, String afinidadElemental) {
 		this.nombre = nombre;
@@ -32,10 +32,10 @@ public class MaestroElemental {
 	    criaturas.put(criatura.getNombre(), criatura);
 	}
 	
-	public void entrenarCriatura(String nombreCriatura) throws ExcepcionMaestriaInsuficiente {
+	public void entrenarCriatura(String nombreCriatura) throws MaestriaInsuficienteException {
 
 		CriaturaElemental criatura = criaturas.get(nombreCriatura);
-		Integer energia = criatura.getNivelEnergia();
+		Integer energia = criatura.getNivelDeEnergia();
 
 	    if (criatura == null) {
 	        System.out.println("La criatura no existe.");
@@ -46,14 +46,20 @@ public class MaestroElemental {
 		if ((nivelMaestria <= 25 && energia >= 100) ||
 		    (nivelMaestria > 25 && nivelMaestria <= 50 && energia > 200)) {
 		    
-		    throw new ExcepcionMaestriaInsuficiente("No tenï¿½s suficiente maestrï¿½a para entrenarla.");
+		    throw new ExcepcionMaestriaInsuficiente("No tenés suficiente maestría para entrenarla.");
+
 		}
 		
 		criatura.entrenar();
 		}
 	
 	public void calmarCriatura(String nombreCriatura) {
+		CriaturaElemental criatura = criaturas.get(nombreCriatura);
 		
+		if(criatura.getComportamientoEmocional.tolowerCase.equals("Inestable")) {
+			criatura.setComportamientoEmocional("Tranquilo");
+		}
+
 	}
 
 	public String getNombre() {
