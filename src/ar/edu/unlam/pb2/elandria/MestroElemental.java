@@ -47,5 +47,8 @@ public class MestroElemental {
 		
 		criatura.entrenar();
 		}
+	
+	public void calmarCriatura(String nombreCriatura) {
+		
 	}
 }
