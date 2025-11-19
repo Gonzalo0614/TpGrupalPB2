@@ -6,16 +6,8 @@ public class CriaturaAncestral extends CriaturaElemental {
 
 	public CriaturaAncestral(String nombre, Integer nivelDeEnergia, String afinidadElemental,
 			String comportamientoEmocional) {
-		
-		Integer energiaInicial = nivelDeEnergia; 
 
-
-        if (energiaInicial == null || energiaInicial < 100) {
-           
-            energiaInicial = 100;
-        }
-		
-	super(nombre, energiaInicial ,afinidadElemental , comportamientoEmocional);
+	super(nombre, (nivelDeEnergia == null || nivelDeEnergia < 100) ? 100 : nivelDeEnergia ,afinidadElemental , comportamientoEmocional);
 		
 	}
 
@@ -35,6 +27,12 @@ public class CriaturaAncestral extends CriaturaElemental {
 	public void pacificar() {
 		this.setComportamientoEmocional("tranquila");
 
+	}
+
+	@Override
+	protected void entrenar() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -78,6 +78,9 @@ public abstract class CriaturaElemental {
 	}
 
 
+	protected abstract void entrenar();
+
+
 	
     
 }

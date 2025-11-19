@@ -36,4 +36,10 @@ public class CriaturaSalvaje extends CriaturaElemental {
 public void pacificar() {
     this.setComportamientoEmocional("tranquila");
 }
+
+@Override
+protected void entrenar() {
+	// TODO Auto-generated method stub
+	
+}
 }

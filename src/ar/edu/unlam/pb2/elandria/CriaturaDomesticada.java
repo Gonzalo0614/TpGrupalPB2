@@ -34,4 +34,10 @@ public class CriaturaDomesticada extends CriaturaElemental {
 		this.setComportamientoEmocional("tranquila");
 	}
 
+	@Override
+	protected void entrenar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

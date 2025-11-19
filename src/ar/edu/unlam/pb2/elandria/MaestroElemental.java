@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.elandria;
 
-import ar.edu.unlam.pb2.*;
+import ar.edu.unlam.pb2.excepciones.*;
 import java.util.*;
 
 public class MaestroElemental {
@@ -32,16 +32,16 @@ public class MaestroElemental {
 	    criaturas.put(criatura.getNombre(), criatura);
 	}
 	
-	public void entrenarCriatura(String nombreCriatura) throws MaestriaInsuficienteException {
+	public void entrenarCriatura(String nombreCriatura) throws ExcepcionMaestriaInsuficiente {
 
 		CriaturaElemental criatura = criaturas.get(nombreCriatura);
-		Integer energia = criatura.getNivelDeEnergia();
 
 	    if (criatura == null) {
 	        System.out.println("La criatura no existe.");
 	        return;
 	    }
 	    
+		Integer energia = criatura.getNivelEnergia();
 
 		if ((nivelMaestria <= 25 && energia >= 100) ||
 		    (nivelMaestria > 25 && nivelMaestria <= 50 && energia > 200)) {
@@ -56,7 +56,7 @@ public class MaestroElemental {
 	public void calmarCriatura(String nombreCriatura) {
 		CriaturaElemental criatura = criaturas.get(nombreCriatura);
 		
-		if(criatura.getComportamientoEmocional.tolowerCase.equals("Inestable")) {
+		if(criatura.getComportamientoEmocional().toLowerCase().equals("tranquilo")) {
 			criatura.setComportamientoEmocional("Tranquilo");
 		}
 
