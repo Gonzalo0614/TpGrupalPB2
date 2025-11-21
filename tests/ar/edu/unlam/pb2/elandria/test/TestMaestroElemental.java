@@ -13,7 +13,7 @@ import ar.edu.unlam.pb2.elandria.MaestroElemental;
 import ar.edu.unlam.pb2.elandria.TransformacionElemental;
 import ar.edu.unlam.pb2.excepciones.ExcepcionMaestriaInsuficiente;
 
-public class TestMaestroelemental {
+public class TestMaestroElemental {
 
 	@Test
     public void queUnMaestroPuedaAgregarCriaturas() {
@@ -132,5 +132,4 @@ public class TestMaestroelemental {
         assertEquals(0, maestro.getCriaturas().size());
     }
 }
-
 

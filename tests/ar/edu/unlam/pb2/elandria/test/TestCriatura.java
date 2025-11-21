@@ -4,13 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import ar.edu.unlam.pb2.elandria.BendicionDelRio;
-import ar.edu.unlam.pb2.elandria.CriaturaAncestral;
-import ar.edu.unlam.pb2.elandria.CriaturaDomesticada;
-import ar.edu.unlam.pb2.elandria.CriaturaElemental;
-import ar.edu.unlam.pb2.elandria.CriaturaSalvaje;
-import ar.edu.unlam.pb2.elandria.TransformacionElemental;
-import ar.edu.unlam.pb2.excepciones.ExcepcionEnergiaMaximaSuperada;
+import ar.edu.unlam.pb2.elandria.*;
+
+import ar.edu.unlam.pb2.excepciones.*;
 
 public class TestCriatura {
 
@@ -130,4 +126,3 @@ public void queLanceExcepcionSiSuperaEnergiaMaxima() throws Exception {
     c.entrenar();
 }
 }
-
