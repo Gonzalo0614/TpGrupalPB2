@@ -13,4 +13,19 @@ public abstract class TransformacionElemental extends CriaturaElemental{
 	    }
 	    
 	    public abstract TransformacionElemental aplicar(CriaturaElemental criatura);
+	    
+	    @Override
+	    public Integer getNivelEnergia() {
+	        return criatura.getNivelEnergia();
+	    }
+
+	    @Override
+	    public String getComportamientoEmocional() {
+	        return criatura.getComportamientoEmocional();
+	    }
+
+	    @Override
+	    public String getAfinidadElemental() {
+	        return criatura.getAfinidadElemental();
+	    }
 	}

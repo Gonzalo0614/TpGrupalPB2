@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+
 import ar.edu.unlam.pb2.elandria.AscensoDelViento;
 import ar.edu.unlam.pb2.elandria.BendicionDelRio;
 import ar.edu.unlam.pb2.elandria.CriaturaDomesticada;
@@ -118,6 +119,5 @@ public class TestTransformaciones {
 
 	    assertEquals(100, t.getNivelEnergia().intValue());
 	}
-
 
 }
