@@ -10,7 +10,7 @@ public class BendicionDelRio extends TransformacionElemental{
 		if(energiaDuplicada > 180) {
 			energiaDuplicada = 180;
 		}
-		this.setNivelEnergia(energiaDuplicada);
+		criatura.setNivelEnergia(energiaDuplicada);
 	}
 	
     @Override
