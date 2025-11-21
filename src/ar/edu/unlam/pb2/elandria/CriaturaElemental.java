@@ -29,7 +29,7 @@ public abstract class CriaturaElemental {
 				|| comportamientoEmocional.equalsIgnoreCase("inestable"))) {
 			this.comportamientoEmocional = comportamientoEmocional.toLowerCase();
 		}else {
-			this.comportamientoEmocional = "tranquilo";
+			this.comportamientoEmocional = "tranquila";
 		}
 	}
 	
