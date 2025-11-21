@@ -5,13 +5,17 @@ import ar.edu.unlam.pb2.excepciones.ExcepcionMaestriaInsuficiente;
 public class LlamaInterna extends TransformacionElemental{
 
 	public LlamaInterna(CriaturaElemental criatura) {
-		super(criatura);
-		if(this.criatura.getAfinidadElemental().toUpperCase().equals("FUEGO")){
-			this.criatura.setNivelEnergia(criatura.getNivelEnergia() +30);
-		}else {
-			this.criatura.volverseInestable();
+		 super(criatura);
+
+		    if (criatura.getAfinidadElemental().equalsIgnoreCase("FUEGO")) {
+		        int nuevaEnergia = criatura.getNivelEnergia() + 30;
+		        criatura.setNivelEnergia(nuevaEnergia);
+		        this.setNivelEnergia(nuevaEnergia); 
+		    } else {
+		        criatura.volverseInestable();
+		        this.setComportamientoEmocional("inestable"); 
+		    }
 		}
-	}
 	
     @Override
     public TransformacionElemental aplicar(CriaturaElemental criatura) {

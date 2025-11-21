@@ -68,7 +68,7 @@ public abstract class CriaturaElemental {
 	}
 
 
-	protected void aumentarEnergia(int cantidad) {
+	public void aumentarEnergia(int cantidad) {
         this.nivelDeEnergia += cantidad;
     }
 

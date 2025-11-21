@@ -6,9 +6,10 @@ public class VinculoTerrestre extends TransformacionElemental{
 
 	public VinculoTerrestre(CriaturaElemental criatura) {
 		super(criatura);
-		if(this.criatura.getNivelEnergia() < 50) {
-			this.criatura.setNivelEnergia(50);
-		}
+	    if (criatura.getNivelEnergia() < 50) {
+	        criatura.setNivelEnergia(50);
+	        this.setNivelEnergia(50); 
+	    }
 	}
 	
     @Override
