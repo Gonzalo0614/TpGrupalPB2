@@ -82,7 +82,9 @@ public abstract class CriaturaElemental {
 		this.comportamientoEmocional = comportamientoEmocional;
 	}
 
-	
+	public boolean esTransformada() {
+	    return this instanceof TransformacionElemental;
+	}
     
 }
 

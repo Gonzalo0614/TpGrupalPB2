@@ -37,7 +37,6 @@ public class MaestroElemental {
 		CriaturaElemental criatura = criaturas.get(nombreCriatura);
 
 	    if (criatura == null) {
-	        System.out.println("La criatura no existe.");
 	        return;
 	    }
 	    
@@ -45,7 +44,7 @@ public class MaestroElemental {
 
 		if (nivelMaestria <= 25 && energia >= 100) {
 		    
-		    throw new ExcepcionMaestriaInsuficiente("No tenés suficiente maestría para entrenarla.");
+		    throw new ExcepcionMaestriaInsuficiente("No tenï¿½s suficiente maestrï¿½a para entrenarla.");
 
 		}
 		
@@ -80,5 +79,7 @@ public class MaestroElemental {
 		return nivelMaestria;
 	}
 	
-	
+	public Map<String, CriaturaElemental> getCriaturas() {
+	    return this.criaturas;
+	}
 }
