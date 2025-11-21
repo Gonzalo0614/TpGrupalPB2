@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ar.edu.unlam.pb2.elandria.AscensoDelViento;
 import ar.edu.unlam.pb2.elandria.BendicionDelRio;
 import ar.edu.unlam.pb2.elandria.CriaturaAncestral;
 import ar.edu.unlam.pb2.elandria.CriaturaDomesticada;
@@ -131,5 +132,6 @@ public class TestMaestroElemental {
 
         assertEquals(0, maestro.getCriaturas().size());
     }
+    
 }
 

@@ -87,5 +87,6 @@ public class TestGestorDeInteracciones {
 	        assertEquals(90, c1.getNivelEnergia().intValue());
 	        assertEquals(95, c2.getNivelEnergia().intValue());
 	    }
+
 	}
 

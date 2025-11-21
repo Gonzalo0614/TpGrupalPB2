@@ -5,6 +5,7 @@ import java.util.*;
 import org.junit.Test;
 
 import ar.edu.unlam.pb2.elandria.AscensoDelViento;
+import ar.edu.unlam.pb2.elandria.BendicionDelRio;
 import ar.edu.unlam.pb2.elandria.CriaturaDomesticada;
 import ar.edu.unlam.pb2.elandria.CriaturaElemental;
 import ar.edu.unlam.pb2.elandria.CriaturaSalvaje;
@@ -129,5 +130,39 @@ public class TestReporteDelConsejo {
 	        Map<String, Integer> mapa = r.obtenerMapaDeAfinidades();
 
 	        assertTrue(mapa.isEmpty());
+	    }
+	    
+
+	    @Test
+	    public void queEmpateDeTransformadasDevuelvaPrimero() {
+	        MaestroElemental m1 = new MaestroElemental("A", 50, "FUEGO");
+	        MaestroElemental m2 = new MaestroElemental("B", 50, "AGUA");
+
+	        CriaturaElemental c1 = new BendicionDelRio(new CriaturaDomesticada("C1", 50, "FUEGO", "tranquila"));
+	        CriaturaElemental c2 = new BendicionDelRio(new CriaturaDomesticada("C2", 50, "AGUA", "tranquila"));
+
+	        m1.agregarCriatura(c1);
+	        m2.agregarCriatura(c2);
+
+	        ReportesDelConsejo r = new ReportesDelConsejo(Set.of(m1, m2));
+
+	        MaestroElemental res = r.obtenerMaestroConMasCriaturasTransformadas();
+	        assertNotNull(res);
+	        assertTrue(res.getNombre().equals("A") || res.getNombre().equals("B"));
+	    }
+
+	    @Test
+	    public void queMapaDeAfinidadesCreeContadoresCorrectosConDuplicados() {
+	        MaestroElemental m = new MaestroElemental("Aang", 40, "AIRE");
+
+	        m.agregarCriatura(new CriaturaDomesticada("C1", 50, "AGUA", "tranquila"));
+	        m.agregarCriatura(new CriaturaDomesticada("C2", 50, "AGUA", "tranquila"));
+	        m.agregarCriatura(new CriaturaDomesticada("C3", 50, "FUEGO", "tranquila"));
+
+	        ReportesDelConsejo r = new ReportesDelConsejo(Set.of(m));
+	        Map<String, Integer> mapa = r.obtenerMapaDeAfinidades();
+
+	        assertEquals(Integer.valueOf(2), mapa.get("AGUA"));
+	        assertEquals(Integer.valueOf(1), mapa.get("FUEGO"));
 	    }
 	}

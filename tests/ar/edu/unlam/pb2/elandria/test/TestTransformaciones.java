@@ -119,5 +119,20 @@ public class TestTransformaciones {
 
 	    assertEquals(100, t.getNivelEnergia().intValue());
 	}
+	
+	  @Test
+	    public void queTransformacionesAnidadasMantenganEnergiaFinalCorrecta() throws Exception {
+	        CriaturaElemental c = new CriaturaDomesticada("Pyra", 100, "FUEGO", "tranquila");
+	        TransformacionElemental t1 = new BendicionDelRio(c);
+	        TransformacionElemental t2 = new LlamaInterna(t1);
+	        assertEquals(180, t2.getNivelEnergia().intValue()); 
+	    }
+
+	    @Test
+	    public void queVinculoTerrestreNoModifiqueTransformadasConEnergiaAlta() throws Exception {
+	        CriaturaElemental c = new BendicionDelRio(new CriaturaDomesticada("Rocky", 100, "TIERRA", "tranquila"));
+	        TransformacionElemental t = new VinculoTerrestre(c);
+	        assertEquals(180, t.getNivelEnergia().intValue()); 
+	    }
 
 }

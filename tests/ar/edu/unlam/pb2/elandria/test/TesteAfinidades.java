@@ -82,5 +82,12 @@ public class TesteAfinidades {
 	    assertEquals("agua", c.getAfinidadElemental());
 	}
 	
+
+    @Test
+    public void queAfinidadNulaEnDecoradorSeConviertaEnFuego() {
+        CriaturaElemental c = new CriaturaDomesticada("Nula", 100, null, "tranquila");
+        TransformacionElemental t = new BendicionDelRio(c);
+        assertEquals("fuego", t.getAfinidadElemental());
+    }
 	
 }
